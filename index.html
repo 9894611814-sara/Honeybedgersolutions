@@ -332,7 +332,7 @@
   </a>
 
   <!-- ═══ SCRIPTS — at bottom so DOM is ready ═══ -->
-  <script src="js/navbar.js" defer></script>
+  <!-- <script src="js/navbar.js" defer></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       initNavbar('home');
@@ -383,7 +383,62 @@
 
     });
   </script>
+<!-------------------------------  -->
+  <script src="js/navbar.js" defer></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  if (typeof initNavbar === "function") {
+    initNavbar('home');
+  }
+
+  function animateCounters() {
+    const counters = document.querySelectorAll(".stat-num[data-target]");
+
+    counters.forEach(counter => {
+      const target = parseInt(counter.getAttribute("data-target"));
+      const suffix = counter.querySelector("span")?.outerHTML || "";
+
+      let step = 0;
+      const steps = 40;
+      const interval = 1500 / steps;
+
+      const timer = setInterval(() => {
+        step++;
+        const progress = step / steps;
+        const current = Math.round(target * (1 - Math.pow(1 - progress, 2)));
+
+        counter.innerHTML = current + suffix;
+
+        if (step >= steps) {
+          counter.innerHTML = target + suffix;
+          clearInterval(timer);
+        }
+      }, interval);
+    });
+  }
+
+  animateCounters();
+});
+</script>
+
+<script>
+window.addEventListener('load', function () {
+  var el = document.getElementById('loader');
+  if (!el) return;
+
+  setTimeout(function () {
+    el.style.transition = 'opacity 0.5s ease';
+    el.style.opacity = '0';
+
+    setTimeout(function () {
+      el.style.display = 'none';
+    }, 500);
+  }, 300);
+});
+</script>
+  
 
 </body>
 
-</html>
+</html> -->
