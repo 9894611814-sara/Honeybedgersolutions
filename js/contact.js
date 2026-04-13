@@ -67,17 +67,12 @@ document.querySelectorAll("#contactForm input, #contactForm textarea, #contactFo
   .forEach(el => el.value = "");
 
 // ✅ Open WhatsApp after 1 sec
-setTimeout(() => {
-  // window.open(url, "_blank");
-  // open instantly
 window.location.href = url;
 
-// then UI update
 setTimeout(() => {
   document.getElementById("contactForm").style.display = "none";
   document.getElementById("successState").style.display = "block";
-}, 300);
-// }, 1000);
+}, 300);  
 
   setTimeout(() => {
     if (btn) {
