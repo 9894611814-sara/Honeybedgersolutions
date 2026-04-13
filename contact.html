@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact HoneyBedger Solutions – Let's build something great together." />
+  <title>Contact — HoneyBedger Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <!-- Single Font Awesome import (duplicate removed) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/shared.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+</head>
+<body>
+
+  <main id="main-content" class="page-enter">
+    <header class="page-hero">
+      <div class="page-hero-inner">
+        <div class="page-hero-badge">Contact Us</div>
+        <h1>Let's Build Something Great</h1>
+        <p>Have a project in mind? We'd love to hear from you and help you succeed.</p>
+      </div>
+    </header>
+
+    <section class="section" aria-labelledby="contact-heading">
+      <div class="container" style="max-width:72rem">
+        <div class="contact-grid">
+
+          <!-- Info Column -->
+          <div class="contact-info-group">
+            <div>
+              <div class="sbadge">Get in Touch</div>
+              <h2 id="contact-heading" class="sec-title">We're Here to Help</h2>
+              <p style="color:var(--slate-500);font-size:.9375rem;line-height:1.7">Fill out the form and our team will get back to you within 2–4 business hours.</p>
+            </div>
+            <address style="font-style:normal;display:flex;flex-direction:column;gap:1.25rem">
+              <div class="contact-info-card" style="background:var(--brand-50);border:1px solid var(--brand-100)">
+                <div class="ci-icon" style="background:var(--brand-500)"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>
+                <div class="ci-detail"><strong>Our Location</strong><span>Dindigul, Tamil Nadu, India</span></div>
+              </div>
+              <div class="contact-info-card" style="background:var(--emerald-50);border:1px solid var(--emerald-100)">
+                <div class="ci-icon" style="background:var(--emerald-500)"><i class="fa-solid fa-phone" aria-hidden="true"></i></div>
+                <div class="ci-detail"><strong>Phone Number</strong><span><a href="tel:+918056501976">+91 8056501976</a></span></div>
+              </div>
+              <div class="contact-info-card" style="background:var(--violet-50);border:1px solid var(--violet-100)">
+                <div class="ci-icon" style="background:var(--violet-500)"><i class="fa-solid fa-envelope" aria-hidden="true"></i></div>
+                <div class="ci-detail"><strong>Email Address</strong><span><a href="mailto:info@honeybedger.com">info@honeybedger.com</a></span></div>
+              </div>
+              <div class="contact-info-card" style="background:var(--amber-50);border:1px solid var(--amber-100)">
+                <div class="ci-icon" style="background:var(--amber-500)"><i class="fa-solid fa-clock" aria-hidden="true"></i></div>
+                <div class="ci-detail"><strong>Working Hours</strong><span>Mon – Sat: 9 AM – 7 PM IST</span></div>
+              </div>
+            </address>
+            <div class="dark-box" role="status">
+              <div class="dark-box-head"><span class="online-dot" aria-hidden="true"></span><span>Quick Response Guaranteed</span></div>
+              <p>We typically respond within 2–4 business hours. For urgent matters, call us directly.</p>
+            </div>
+          </div>
+
+          <!-- Form Column -->
+          <div class="contact-form-wrap">
+            <h3>Send Us a Message</h3>
+            <p>Tell us about your project and we'll craft a custom solution plan for you.</p>
+
+            <div id="contactForm">
+              <div class="form-row">
+                <div>
+                  <label class="fl" for="f-name">Full Name <span aria-hidden="true">*</span></label>
+                  <input type="text" id="f-name" class="fi" placeholder="e.g. Arjun Kumar" autocomplete="name" aria-required="true" />
+                  <p class="error-msg" id="err-name" role="alert">Please enter your name.</p>
+                </div>
+                <div>
+                  <label class="fl" for="f-email">Email Address <span aria-hidden="true">*</span></label>
+                  <input type="email" id="f-email" class="fi" placeholder="you@example.com" autocomplete="email" aria-required="true" />
+                  <p class="error-msg" id="err-email" role="alert">Please enter a valid email.</p>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group" style="margin-bottom:0">
+                  <label class="fl" for="f-phone">Phone Number</label>
+                  <input type="tel" id="f-phone" class="fi" placeholder="+91 XXXXX XXXXX" autocomplete="tel" />
+                </div>
+                <div class="form-group" style="margin-bottom:0">
+                  <label class="fl" for="f-company">Company Name</label>
+                  <input type="text" id="f-company" class="fi" placeholder="Your Company Pvt Ltd" autocomplete="organization" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="fl" for="f-service">Service Interested In</label>
+                <select id="f-service" class="fi">
+                  <option value="">Select a service...</option>
+                  <option>Business Consulting</option>
+                  <option>Website Development</option>
+                  <option>Digital Marketing</option>
+                  <option>IT Solutions</option>
+                  <option>Other / Multiple Services</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="fl" for="f-budget">Project Budget</label>
+                <select id="f-budget" class="fi">
+                  <option value="">Select budget range...</option>
+                  <option>Under ₹10,000</option>
+                  <option>₹10,000 – ₹25,000</option>
+                  <option>₹25,000 – ₹50,000</option>
+                  <option>₹50,000 – ₹1,00,000</option>
+                  <option>₹1,00,000 – ₹3,00,000</option>
+                  <option>₹3,00,000+</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="fl" for="f-msg">Your Message <span aria-hidden="true">*</span></label>
+                <textarea id="f-msg" class="fi" rows="4" placeholder="Tell us about your project, goals, and any specific requirements..." aria-required="true"></textarea>
+                <p class="error-msg" id="err-msg" role="alert">Please enter your message.</p>
+              </div>
+              <button type="button" onclick="submitContact()" id="submitBtn" class="submit-btn">
+                <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Send Message
+              </button>
+            </div>
+
+            <div id="successState" class="success-state" role="status" aria-live="polite">
+              <div class="success-icon">
+                <i class="fa-solid fa-check"></i>
+              </div>
+              <h4>Message Sent!</h4>
+              <p>Thank you for reaching out. Our team will get back to you within 2–4 business hours.</p>
+            </div>
+          </div>
+
+        </div><!-- /.contact-grid -->
+      </div><!-- /.container -->
+    </section>
+  </main>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">
+                     <div class="logo-icon">
+  <img src="images/mylogo.png" alt="HoneyBedger Logo" class="logo-img">
+</div>
+            <span class="logo-text"><span class="part-a">Honey</span><span class="part-b" style="color:#fff">Bedger</span><span class="part-c">solutions</span></span>
+          </div>
+          <p class="footer-desc">Smart solutions for a better tomorrow.</p>
+          <p class="footer-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Dindigul, Tamil Nadu, India</p>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="work.html">Our Work</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html">Business Consulting</a></li>
+            <li><a href="services.html">Website Development</a></li>
+            <li><a href="services.html">Digital Marketing</a></li>
+            <li><a href="services.html">IT Solutions</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+918056501976"><i class="fa-solid fa-phone fi-icon" aria-hidden="true"></i>+91 8056501976</a></li>
+            <li><a href="mailto:info@honeybedger.com"><i class="fa-solid fa-envelope fi-icon" aria-hidden="true"></i>honeybedgertech.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">© 2026 HoneyBedger Solutions. All rights reserved.</span>
+        <span class="footer-tag">Innovative Solutions. Real Results.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp float -->
+  <a href="https://wa.me/918056501976?text=Hi%20HoneyBedger%20Solutions%2C%20I%20have%20an%20enquiry"
+     class="whatsapp-float"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- ═══ SCRIPTS — at bottom so DOM is ready ═══ -->
+  <script src="js/navbar.js" defer></script>
+  <script>document.addEventListener('DOMContentLoaded', function(){ initNavbar('contact'); });</script>
+  <script src="js/contact.js" defer></script>
+
+</body>
+</html>
