@@ -1,0 +1,182 @@
+/* ===============================
+   SOLUTIONS (MERGED CLEAN VERSION)
+=============================== */
+
+/* GRID */
+.sol-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.8rem;
+}
+
+/* CARD */
+.sol-card {
+   position: relative;
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--slate-200);
+  transition: var(--transition);
+}
+/* IMAGE */
+.sol-img {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.sol-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sol-card:hover img {
+  transform: scale(1.1);
+}
+
+/* OVERLAY */
+.sol-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+}
+
+/* BODY */
+.sol-body {
+  padding: 1.5rem;
+}
+
+/* ICON */
+.sol-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: var(--brand-500);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+}
+
+/* TEXT */
+.sol-body h3 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--slate-800);
+  margin-bottom: 0.4rem;
+}
+
+.sol-body p {
+  font-size: 0.9rem;
+  color: var(--slate-500);
+  line-height: 1.6;
+  margin-bottom: 0.8rem;
+}
+
+/* RESPONSIVE */
+@media (min-width: 640px) {
+  .sol-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .sol-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+/* ===============================
+   SCROLL ANIMATION
+=============================== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.7s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===============================
+   GLOW EFFECT
+=============================== */
+.sol-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+   background: linear-gradient(120deg, var(--brand-400),  #1db4fa);
+  opacity: 0;
+  transition: 0.4s;
+  z-index: -1;
+}
+
+.sol-card:hover::before {
+  opacity: 1;
+}
+
+/* ===============================
+   SMOOTH HOVER
+=============================== */
+
+.sol-card:hover {
+  transform: translateY(-12px) scale(1.02);
+}
+
+/* ===============================
+   IMAGE ZOOM SMOOTH
+=============================== */
+
+.sol-img img {
+  transition: transform 0.8s ease;
+}
+
+/* ===============================
+   ICON GLOW
+=============================== */
+
+.sol-icon {
+  box-shadow: 0 5px 20px rgba(37,99,235,0.4);
+  transition: 0.3s;
+}
+
+.sol-card:hover .sol-icon {
+  transform: scale(1.1);
+}
+.icon-brand   { background: var(--brand-50);   color: var(--brand-600); }
+.icon-emerald { background: var(--emerald-50); color: #065f46; }
+.icon-rose    { background: var(--rose-50);    color: var(--rose-700); }
+.icon-violet  { background: var(--violet-50);  color: var(--violet-700); }
+
+/* ===============================
+   CARD HOVER - SOFT GREEN
+=============================== */
+
+.sol-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(16,185,129,0.15); /* soft green shadow */
+  border-color: var(--emerald-300);
+}
+
+/* OPTIONAL: subtle green glow border */
+.sol-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  /* background: linear-gradient(120deg, #34d399, #10b981, #6ee7b7);
+  opacity: 0.1; */
+  transition: 0.4s;
+  z-index: -1;
+}
+
+.sol-card:hover::before {
+  opacity: 0.6;
+}

@@ -1,0 +1,517 @@
+    /* *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --brand-50: #eff6ff;
+      --brand-100: #dbeafe;
+      --brand-500: #3b82f6;
+      --brand-600: #2563eb;
+      --violet-50: #f5f3ff;
+      --violet-500: #8b5cf6;
+      --rose-50: #fff1f2;
+      --rose-500: #f43f5e;
+      --emerald-50: #ecfdf5;
+      --emerald-500: #10b981;
+      --slate-50: #f8fafc;
+      --slate-100: #f1f5f9;
+      --slate-200: #e2e8f0;
+      --slate-500: #64748b;
+      --slate-700: #334155;
+      --slate-800: #1e293b;
+      --slate-900: #0f172a;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #f8fafc;
+      color: var(--slate-800);
+      overflow-x: hidden;
+    } */
+
+    /* ── HERO ── */
+    .page-hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #0f172a 100%);
+      padding: 5rem 1.5rem 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(59, 130, 246, 0.18) 0%, transparent 70%);
+    }
+
+    .page-hero-badge {
+      display: inline-block;
+      background: rgba(59, 130, 246, 0.18);
+      color: #93c5fd;
+      border: 1px solid rgba(59, 130, 246, 0.35);
+      border-radius: 999px;
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: .35rem 1.1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .page-hero h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 900;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      color: #fff;
+      line-height: 1.05;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+
+    .page-hero p {
+      color: #94a3b8;
+      font-size: 1.1rem;
+      max-width: 540px;
+      margin: 0 auto;
+      line-height: 1.7;
+      position: relative;
+    }
+
+    /* ── SECTION WRAPPER ── */
+    .section {
+      padding: 5rem 1.5rem;
+    }
+
+    .container {
+      max-width: 72rem;
+      margin: 0 auto;
+    }
+
+    .sec-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 900;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      color: var(--slate-900);
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .sec-sub {
+      text-align: center;
+      color: var(--slate-500);
+      font-size: 1rem;
+      margin-bottom: 4rem;
+    }
+
+    /* ── SERVICE CARDS GRID ── */
+    .services-grid {
+      display: grid;
+      gap: 2rem;
+    }
+
+    /* ── BASE CARD ── */
+    .svc-card {
+      border-radius: 1.75rem;
+      overflow: hidden;
+      position: relative;
+      background: #fff;
+      border: 1.5px solid var(--slate-200);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 340px;
+      transition: box-shadow 0.35s ease, transform 0.35s ease, border-color 0.35s ease;
+      cursor: default;
+    }
+
+    .svc-card:hover {
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+      transform: translateY(-4px);
+    }
+
+    /* Alternate image left/right */
+    .svc-card.img-right {}
+
+    .svc-card.img-left {
+      direction: rtl;
+    }
+
+    .svc-card.img-left>* {
+      direction: ltr;
+    }
+
+    /* ── IMAGE PANEL ── */
+    .svc-img-panel {
+      position: relative;
+      overflow: hidden;
+      min-height: 280px;
+    }
+
+    .svc-img-panel img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .svc-card:hover .svc-img-panel img {
+      transform: scale(1.07);
+    }
+
+    /* Colored gradient overlay on image */
+    .svc-img-panel::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0.35;
+      transition: opacity 0.4s;
+    }
+
+    .svc-card:hover .svc-img-panel::after {
+      opacity: 0.2;
+    }
+
+    .svc-card.c-brand .svc-img-panel::after {
+      background: linear-gradient(135deg, #2563eb, #0f172a);
+    }
+
+    .svc-card.c-violet .svc-img-panel::after {
+      background: linear-gradient(135deg, #7c3aed, #0f172a);
+    }
+
+    .svc-card.c-rose .svc-img-panel::after {
+      background: linear-gradient(135deg, #e11d48, #0f172a);
+    }
+
+    .svc-card.c-emerald .svc-img-panel::after {
+      background: linear-gradient(135deg, #059669, #0f172a);
+    }
+
+    /* ── CONTENT PANEL ── */
+    .svc-content {
+      padding: 2.75rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1.25rem;
+      background: #fff;
+    }
+
+    .svc-icon-wrap {
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: .875rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+    }
+
+    .svc-card:hover .svc-icon-wrap {
+      transform: scale(1.1) rotate(-4deg);
+    }
+
+    .svc-card.c-brand .svc-icon-wrap {
+      background: var(--brand-50);
+    }
+
+    .svc-card.c-violet .svc-icon-wrap {
+      background: var(--violet-50);
+    }
+
+    .svc-card.c-rose .svc-icon-wrap {
+      background: var(--rose-50);
+    }
+
+    .svc-card.c-emerald .svc-icon-wrap {
+      background: var(--emerald-50);
+    }
+
+    .svc-num {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 900;
+      font-size: 3.5rem;
+      line-height: 1;
+      opacity: 0.06;
+      color: var(--slate-900);
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      pointer-events: none;
+      font-style: italic;
+    }
+
+    .svc-content h3 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 900;
+      font-size: 1.45rem;
+      color: var(--slate-900);
+      line-height: 1.2;
+    }
+
+    .svc-content p {
+      color: var(--slate-500);
+      line-height: 1.75;
+      font-size: .95rem;
+    }
+
+    /* ── PILL TAGS ── */
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin-top: .25rem;
+    }
+
+    .tpill {
+      display: inline-block;
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .04em;
+      padding: .3rem .75rem;
+      border-radius: 999px;
+      text-transform: uppercase;
+      transition: transform 0.2s ease;
+    }
+
+    .tpill:hover {
+      transform: translateY(-1px);
+    }
+
+    .pill-brand {
+      background: var(--brand-50);
+      color: var(--brand-600);
+      border: 1px solid var(--brand-100);
+    }
+
+    .pill-violet {
+      background: var(--violet-50);
+      color: var(--violet-500);
+      border: 1px solid #ddd6fe;
+    }
+
+    .pill-rose {
+      background: var(--rose-50);
+      color: var(--rose-500);
+      border: 1px solid #fecdd3;
+    }
+
+    .pill-emerald {
+      background: var(--emerald-50);
+      color: var(--emerald-500);
+      border: 1px solid #a7f3d0;
+    }
+
+    /* ── ACCENT LINE ── */
+    .svc-accent-line {
+      width: 2.5rem;
+      height: 3px;
+      border-radius: 2px;
+    }
+
+    .c-brand .svc-accent-line {
+      background: var(--brand-500);
+    }
+
+    .c-violet .svc-accent-line {
+      background: var(--violet-500);
+    }
+
+    .c-rose .svc-accent-line {
+      background: var(--rose-500);
+    }
+
+    .c-emerald .svc-accent-line {
+      background: var(--emerald-500);
+    }
+
+    /* ── FLOATING IMAGE BADGE ── */
+    .svc-img-badge {
+      position: absolute;
+      bottom: 1.25rem;
+      left: 1.25rem;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      border-radius: .875rem;
+      padding: .65rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+      z-index: 2;
+      transform: translateY(8px);
+      opacity: 0;
+      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .svc-card:hover .svc-img-badge {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .svc-img-badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .c-brand .svc-img-badge-dot {
+      background: var(--brand-500);
+    }
+
+    .c-violet .svc-img-badge-dot {
+      background: var(--violet-500);
+    }
+
+    .c-rose .svc-img-badge-dot {
+      background: var(--rose-500);
+    }
+
+    .c-emerald .svc-img-badge-dot {
+      background: var(--emerald-500);
+    }
+
+    .svc-img-badge span {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: .72rem;
+      color: var(--slate-800);
+      letter-spacing: .03em;
+      text-transform: uppercase;
+    }
+
+    /* ── CTA ── */
+    .cta-wrap {
+      text-align: center;
+      margin-top: 4rem;
+      padding: 3.5rem 2rem;
+      background: linear-gradient(135deg, #0f172a, #1e3a5f);
+      border-radius: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-wrap::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 70% at 50% 100%, rgba(59, 130, 246, 0.2) 0%, transparent 70%);
+    }
+
+    .cta-wrap h3 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 900;
+      font-size: 1.9rem;
+      color: #fff;
+      margin-bottom: .75rem;
+      position: relative;
+    }
+
+    .cta-wrap p {
+      color: #94a3b8;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      background: var(--brand-500);
+      color: #fff;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: .95rem;
+      padding: .875rem 2.25rem;
+      border-radius: 999px;
+      text-decoration: none;
+      position: relative;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
+    }
+
+    .btn-primary:hover {
+      background: #1d4ed8;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(59, 130, 246, 0.5);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 767px) {
+      .svc-card {
+        grid-template-columns: 1fr;
+      }
+
+      .svc-card.img-left {
+        direction: ltr;
+      }
+
+      .svc-img-panel {
+        min-height: 200px;
+        max-height: 240px;
+      }
+
+      .svc-content {
+        padding: 2rem 1.5rem;
+      }
+
+      .svc-num {
+        font-size: 2.5rem;
+      }
+    }
+
+    /* ── ENTRY ANIMATIONS ── */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(32px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .svc-card {
+      animation: fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    .svc-card:nth-child(1) {
+      animation-delay: 0.05s;
+    }
+
+    .svc-card:nth-child(2) {
+      animation-delay: 0.15s;
+    }
+
+    .svc-card:nth-child(3) {
+      animation-delay: 0.25s;
+    }
+
+    .svc-card:nth-child(4) {
+      animation-delay: 0.35s;
+    }
+
+    /* ── FOOTER (simplified) ── */
+    footer {
+      background: #0f172a;
+      color: #94a3b8;
+      padding: 3rem 1.5rem 2rem;
+      font-size: .875rem;
+      text-align: center;
+      margin-top: 5rem;
+    }
+
+    footer p {
+      opacity: .6;
+    }

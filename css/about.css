@@ -1,0 +1,240 @@
+/* ============================================================
+   about1.css — HoneyBedger Solutions (FIXED VERSION)
+============================================================ */
+
+/* ── ABOUT TEXT & TIMELINE ── */
+.about-text p {
+  color: var(--slate-500);
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
+}
+
+.timeline {
+  border-left: 2px solid var(--brand-200);
+  padding-left: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.tl-item {
+  position: relative;
+}
+
+.tl-item::before {
+  content: '';
+  position: absolute;
+  left: -2.125rem;
+  top: .375rem;
+  width: .75rem;
+  height: .75rem;
+  background: var(--brand-500);
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 3px var(--brand-200);
+}
+
+.tl-item h4 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: .875rem;
+  color: var(--slate-800);
+}
+
+.tl-item p {
+  font-size: .875rem;
+  color: var(--slate-500);
+  margin-top: .25rem;
+  margin-bottom: 0;
+}
+
+/* ── VALUES GRID ── */
+.value-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.val-card {
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+
+.val-card h4 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: .875rem;
+  color: var(--slate-800);
+  margin-bottom: .5rem;
+}
+
+.val-card p {
+  color: var(--slate-500);
+  font-size: .8125rem;
+  line-height: 1.6;
+}
+
+.val-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: .75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.val-icon i {
+  color: #fff;
+  font-size: .875rem;
+}
+
+/* ── STATS DARK ROW ── */
+.stat-dark-row {
+  background: var(--slate-900);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.stat-dark-item {
+  text-align: center;
+}
+
+.stat-dark-item:not(:last-child) {
+  border-right: 1px solid rgba(255,255,255,.1);
+}
+
+.stat-dark-num {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 900;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.stat-dark-num span {
+  color: #60a5fa;
+}
+
+.stat-dark-label {
+  color: rgba(255,255,255,.5);
+  font-size: .75rem;
+  font-weight: 600;
+  margin-top: .25rem;
+}
+
+/* ── TEAM ── */
+.team-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.team-thumb {
+  height: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  transition: var(--transition);
+}
+
+.card:hover .team-thumb {
+  transform: scale(1.05);
+}
+
+/* ── RESPONSIVE ── */
+@media (min-width: 1024px) {
+  .team-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ============================================================
+   SLIDER SECTION (ONLY THIS IS DARK)
+============================================================ */
+
+.slider-section {
+  background: #0f172a;
+  color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+  justify-content: center;
+}
+
+/* normal section text */
+.section p {
+  color: #64748b;
+}
+
+/* slider section text override */
+.slider-section p {
+  color: #94a3b8;
+}
+
+.slider-section h2 {
+  color: #fff;
+}
+
+/* SLIDER CONTAINER */
+.slideshow-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* SLIDES */
+.mySlides {
+  display: none;
+  position: relative;
+}
+
+.mySlides img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+/* TEXT OVERLAY */
+.slide-content {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  text-align: left;
+}
+
+.slide-content h3 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.slide-content p {
+  font-size: 14px;
+  color: #e2e8f0;
+}
+
+/* ANIMATION */
+.fade {
+  animation: fade 1s;
+}
+
+@keyframes fade {
+  from { opacity: .4 }
+  to { opacity: 1 }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .mySlides img {
+    height: 250px;
+  }
+}
