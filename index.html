@@ -5,8 +5,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
-    content="HoneyBedger Solutions – Innovative tech solutions for growing businesses in Tamil Nadu." />
-  <title>Home — HoneyBedger Solutions</title>
+    content="Honey Bedger Solutions – Innovative tech solutions for growing businesses in Tamil Nadu." />
+  <title>Home — Honey Bedger Solutions</title>
+  <link rel="icon" href="images/mylogo.png" type="image/png">
   <link
     href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=DM+Sans:wght@400;500;600&display=swap"
     rel="stylesheet" />
@@ -296,6 +297,7 @@
           <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
             <li><a href="work.html">Our Work</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
@@ -319,71 +321,19 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <span class="footer-copy">© 2026 HoneyBedger Solutions. All rights reserved.</span>
+        <span class="footer-copy">© 2026 Honey Bedger Solutions. All rights reserved.</span>
         <span class="footer-tag">Innovative Solutions. Real Results.</span>
       </div>
     </div>
   </footer>
 
   <!-- WhatsApp Float -->
-  <a href="https://wa.me/919894611814?text=Hi%20HoneyBedger%20Solutions%2C%20I%20have%20an%20enquiry"
+  <a href="https://wa.me/918056501976?text=Hi%20HoneyBedger%20Solutions%2C%20I%20have%20an%20enquiry"
      class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
-  <!-- ═══ SCRIPTS — at bottom so DOM is ready ═══ -->
-  <!-- <script src="js/navbar.js" defer></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      initNavbar('home');
-    });
-  </script>
-  <script src="js/loader.js" defer></script>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-
-      function animateCounters() {
-        const counters = document.querySelectorAll(".stat-num[data-target]");
-        counters.forEach(counter => {
-          const target = parseInt(counter.getAttribute("data-target"));
-          const suffix = counter.querySelector("span").outerHTML;
-          const duration = 1500;
-          const steps = 40;
-          const interval = duration / steps;
-          let step = 0;
-
-          const timer = setInterval(() => {
-            step++;
-            const progress = step / steps;
-            const current = Math.round(target * (1 - Math.pow(1 - progress, 2)));
-            counter.innerHTML = current + suffix;
-            if (step >= steps) {
-              counter.innerHTML = target + suffix;
-              clearInterval(timer);
-            }
-          }, interval);
-        });
-      }
-
-      const loaderEl = document.getElementById("loader");
-      if (loaderEl) {
-        const observer = new MutationObserver(() => {
-          const style = window.getComputedStyle(loaderEl);
-          if (style.display === "none" || style.opacity === "0" || loaderEl.classList.contains("hidden")) {
-            observer.disconnect();
-            animateCounters();
-          }
-        });
-        observer.observe(loaderEl, { attributes: true, attributeFilter: ["style", "class"] });
-        setTimeout(animateCounters, 3000);
-      } else {
-        animateCounters();
-      }
-
-    });
-  </script>
-<!-------------------------------  -->
   <script src="js/navbar.js" defer></script>
 
 <script>
@@ -394,31 +344,45 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function animateCounters() {
     const counters = document.querySelectorAll(".stat-num[data-target]");
+    const duration = 2500;
 
     counters.forEach(counter => {
-      const target = parseInt(counter.getAttribute("data-target"));
-      const suffix = counter.querySelector("span")?.outerHTML || "";
+      const target = Number(counter.getAttribute("data-target"));
+      const numberNode = counter.firstChild;
+      let startTime = null;
 
-      let step = 0;
-      const steps = 100;
-      const interval = 1500 / steps;
+      numberNode.nodeValue = "0";
 
-      const timer = setInterval(() => {
-        step++;
-        const progress = step / steps;
-        const current = Math.round(target * (1 - Math.pow(1 - progress, 2)));
+      function updateCounter(timestamp) {
+        if (startTime === null) startTime = timestamp;
 
-        counter.innerHTML = current + suffix;
+        const progress = Math.min((timestamp - startTime) / duration, 1);
+        const easedProgress = 1 - Math.pow(1 - progress, 3);
+        numberNode.nodeValue = String(Math.floor(target * easedProgress));
 
-        if (step >= steps) {
-          counter.innerHTML = target + suffix;
-          clearInterval(timer);
+        if (progress < 1) {
+          requestAnimationFrame(updateCounter);
+        } else {
+          numberNode.nodeValue = String(target);
         }
-      }, interval);
+      }
+
+      requestAnimationFrame(updateCounter);
     });
   }
 
-  animateCounters();
+  const statsSection = document.querySelector(".hero-stats");
+
+  if (statsSection) {
+    const statsObserver = new IntersectionObserver((entries, observer) => {
+      if (!entries[0].isIntersecting) return;
+
+      observer.disconnect();
+      animateCounters();
+    }, { threshold: 0.25 });
+
+    statsObserver.observe(statsSection);
+  }
 });
 </script>
 

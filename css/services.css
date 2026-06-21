@@ -84,12 +84,20 @@
 
     /* ── SECTION WRAPPER ── */
     .section {
-      padding: 5rem 1.5rem;
+      padding: 5rem 0;
     }
 
     .container {
-      max-width: 72rem;
-      margin: 0 auto;
+      width: 100%;
+      max-width: 1280px;
+      margin-inline: auto;
+      padding-inline: 1.25rem;
+    }
+
+    @media (min-width: 1024px) {
+      .container {
+        padding-inline: 2rem;
+      }
     }
 
     .sec-title {

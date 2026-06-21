@@ -45,7 +45,14 @@ function initNavbar(activePage) {
   </nav>`;
 
   // Inject before first child of body
-  document.body.insertAdjacentHTML('afterbegin', navHTML);
+  // document.body.insertAdjacentHTML('afterbegin', navHTML);
+  const main = document.getElementById("main-content");
+
+if (main) {
+  main.insertAdjacentHTML("beforebegin", navHTML);
+} else {
+  document.body.insertAdjacentHTML("afterbegin", navHTML);
+}
 }
 
 /* ── Mobile hamburger toggle ── */
@@ -109,7 +116,7 @@ function initScrollReveal() {
 }
 
 const whatsappFloat = `
-<a href="https://wa.me/919894611814?text=Hi%20HoneyBedger%20Solutions%2C%20I%20have%20an%20enquiry"
+<a href="https://wa.me/918056501976?text=Hi%20HoneyBedger%20Solutions%2C%20I%20have%20an%20enquiry"
    class="whatsapp-float"
    target="_blank"
    rel="noopener noreferrer"
